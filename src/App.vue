@@ -1,18 +1,22 @@
 <template>
-  <div class="relative min-h-screen text-white bg-black">
+  <div class="relative min-h-screen font-sans text-white bg-black">
     <ThreeScene />
-    <h1
-      class="container absolute mx-auto font-mono text-3xl text-6xl font-bold text-center uppercase transform -translate-x-1/2 -translate-y-1/2"
+
+    <div
+      class="container absolute mx-auto transform -translate-x-1/2 -translate-y-1/2 opacity-50"
       style="top: 50%; left: 50%;"
     >
-      Waffle Machine
-    </h1>
+      <h1 class="text-6xl font-bold text-center uppercase">
+        Waffle Machine
+      </h1>
 
-    <div class="absolute bottom-0 right-0 text-white">
-      <a
-        href="mailto:concert@wafflemachine.band"
-        class="block p-5 font-mono uppercase"
-      >
+      <h2 class="text-3xl font-bold text-center uppercase opacity-25">
+        Coming soon
+      </h2>
+    </div>
+
+    <div class="absolute bottom-0 right-0">
+      <a href="mailto:concert@wafflemachine.band" class="block p-5 uppercase">
         Contact
       </a>
     </div>
@@ -26,12 +30,3 @@ export default {
   components: { ThreeScene }
 }
 </script>
-
-<style lang="postcss" scoped>
-h1 {
-  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-}
-</style>
