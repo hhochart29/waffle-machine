@@ -7,35 +7,47 @@ import { useSetScene } from '../composable/useSetScene.js'
 import { useMouseMove } from '../composable/useMouseMove.js'
 import { ref, unref, onMounted, watch, reactive, toRaw } from 'vue'
 import * as THREE from 'three'
+import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 
 export default {
   setup() {
     const threeContainer = ref(undefined)
     const threeItems = reactive({
-      cube: undefined
+      waffle: undefined
     })
 
     const { scene, camera, renderer } = useSetScene(threeContainer, false)
 
     onMounted(() => {
-      const geometry = new THREE.BoxGeometry()
-      const material = new THREE.MeshLambertMaterial({ color: 0x00ff00 })
-      threeItems.cube = new THREE.Mesh(geometry, material)
+      const loader = new OBJLoader()
 
-      const spotlight = new THREE.SpotLight(0xffffff, 1, 10, Math.PI / 6, 0, 2)
+      loader.load('/src/assets/waffle.obj', function (obj) {
+        obj.scale.x = 0.06
+        obj.scale.y = 0.06
+        obj.scale.z = 0.06
+
+        parent = new THREE.Object3D()
+        scene.add(parent)
+        parent.add(obj)
+        threeItems.waffle = parent
+      })
+
+      const spotlight = new THREE.SpotLight(0xffffff, 1, 10, Math.PI / 6, 0, 5)
       spotlight.position.set(-1, 1, 3)
 
       scene.add(spotlight)
       // scene.add(new THREE.SpotLightHelper(spotlight))
 
-      scene.add(toRaw(threeItems.cube))
       animate()
     })
 
     function animate() {
       renderer.render(scene, camera)
-      threeItems.cube.rotation.y += 0.005
-      threeItems.cube.rotation.x -= 0.002
+
+      if (threeItems.waffle) {
+        threeItems.waffle.rotation.y += 0.0007
+        threeItems.waffle.rotation.x -= 0.001
+      }
       requestAnimationFrame(animate)
     }
 

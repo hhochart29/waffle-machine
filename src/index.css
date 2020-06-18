@@ -3,3 +3,13 @@
 @import 'tailwindcss/components';
 
 @import 'tailwindcss/utilities';
+
+@font-face {
+  font-family: 'Changa';
+  src: url('./assets/fonts/Changa.ttf') format('truetype');
+  font-weight: 1 999;
+}
+
+body {
+  background: #000;
+}

@@ -3,19 +3,23 @@
     <ThreeScene />
 
     <div
-      class="container absolute mx-auto transform -translate-x-1/2 -translate-y-1/2 opacity-50"
+      class="container absolute mx-auto text-center transform -translate-x-1/2 -translate-y-1/2 opacity-75"
       style="top: 50%; left: 50%;"
     >
-      <h1 class="text-6xl font-bold text-center uppercase">
+      <div class="text-6xl uppercase">
+        <span class="font-semibold">WM</span>
+        <span class="font-hairline sharp">#</span>
+      </div>
+      <h1 class="text-6xl uppercase band-name">
         Waffle Machine
       </h1>
 
-      <h2 class="text-3xl font-bold text-center uppercase opacity-25">
+      <h2 class="text-3xl font-normal uppercase opacity-25">
         Coming soon
       </h2>
     </div>
 
-    <div class="absolute bottom-0 right-0">
+    <div class="absolute bottom-0 right-0 opacity-50">
       <a href="mailto:concert@wafflemachine.band" class="block p-5 uppercase">
         Contact
       </a>
@@ -30,3 +34,29 @@ export default {
   components: { ThreeScene }
 }
 </script>
+
+<style lang="postcss" scoped>
+@keyframes nameFontWeight {
+  0% {
+    font-weight: 10;
+  }
+  100% {
+    font-weight: 400;
+  }
+}
+
+@keyframes nameRotate {
+  0% {
+    transform: rotate(-1deg);
+  }
+
+  100% {
+    transform: rotate(1deg);
+  }
+}
+
+.band-name {
+  animation: nameFontWeight 2s infinite alternate ease-in-out,
+    nameRotate 3s infinite alternate ease-in-out;
+}
+</style>

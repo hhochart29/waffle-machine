@@ -153,6 +153,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        'Changa',
         'system-ui',
         '-apple-system',
         'BlinkMacSystemFont',
