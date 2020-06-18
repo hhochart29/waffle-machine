@@ -21,7 +21,7 @@ export default {
     onMounted(() => {
       const loader = new OBJLoader()
 
-      loader.load('/src/assets/waffle.obj', function (obj) {
+      loader.load('/waffle.obj', function (obj) {
         obj.scale.x = 0.06
         obj.scale.y = 0.06
         obj.scale.z = 0.06
