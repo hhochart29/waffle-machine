@@ -38,25 +38,25 @@ export default {
 <style lang="postcss" scoped>
 @keyframes nameFontWeight {
   0% {
-    font-weight: 10;
+    font-weight: 250;
   }
   100% {
-    font-weight: 400;
+    font-weight: 450;
   }
 }
 
 @keyframes nameRotate {
   0% {
-    transform: rotate(-1deg);
+    transform: skewY(-3deg);
   }
 
   100% {
-    transform: rotate(1deg);
+    transform: skewY(1deg);
   }
 }
 
 .band-name {
-  animation: nameFontWeight 2s infinite alternate ease-in-out,
+  animation: nameFontWeight 5s infinite alternate ease-in-out,
     nameRotate 3s infinite alternate ease-in-out;
 }
 </style>
