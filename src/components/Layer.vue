@@ -1,18 +1,10 @@
 <template>
   <div>
     <div
-      class="flex items-center justify-center py-5 text-6xl uppercase select-none"
+      class="flex items-center justify-center h-screen py-5 uppercase select-none"
     >
       <div class="font-semibold glitch" data-text="WM">WM</div>
       <div class="font-hairline glitch" data-text="#">#</div>
-    </div>
-    <div
-      class="container absolute mx-auto text-center transform -translate-x-1/2 -translate-y-1/2"
-      style="top: 50%; left: 50%"
-    >
-      <h1 class="text-6xl uppercase">Waffle Machine</h1>
-
-      <h2 class="text-3xl font-normal uppercase opacity-25">Coming soon</h2>
     </div>
 
     <div class="absolute bottom-0 right-0 opacity-75">
@@ -27,6 +19,7 @@
 .glitch {
   position: relative;
   color: white;
+  font-size: 10rem;
 }
 
 .glitch::before,
@@ -39,32 +32,41 @@
 }
 
 .glitch::before {
+  text-shadow: 3px 2px 0 #ff00ff;
   left: -1px;
-  text-shadow: 1px 2px 0 #ff00ff;
-  animation: glitch-loop-1 0.8s infinite ease-in-out alternate-reverse;
+  animation: glitch-loop-1 1.4s infinite ease-in-out alternate-reverse;
 }
 
 .glitch::after {
-  text-shadow: -1px 0 #ffff00;
+  top: -1px;
+  left: -2px;
   text-shadow: -3px 0 #00ffff;
-  animation: glitch-loop-2 0.8s infinite ease-in-out alternate-reverse;
+  clip: rect(0, 9999px, 9px, 0);
+  animation: glitch-loop-2 1.1s infinite ease-in-out alternate-reverse;
 }
 
 @keyframes glitch-loop-1 {
   0% {
-    clip: rect(0, 9999px, 9px, 0);
+    left: -5px;
+    top: 2px;
+    clip: rect(115px, 9999px, 9999px, 0);
   }
   25% {
-    clip: rect(20px, 9999px, 0, 0);
+    top: -1px;
+    clip: rect(280px, 9999px, 9999px, 0);
   }
   50% {
-    clip: rect(50px, 9999px, 102px, 0);
+    left: 2px;
+    clip: rect(9999px, 9999px, 9999px, 0);
   }
   75% {
-    clip: rect(30px, 9999px, 102px, 0);
+    top: -2px;
+    clip: rect(26px, 9999px, 9999px, 0);
   }
   100% {
-    clip: rect(91px, 9999px, 98px, 0);
+    left: 0px;
+    top: 3px;
+    clip: rect(120px, 9999px, 9999px, 0);
   }
 }
 
@@ -87,7 +89,7 @@
   75% {
     top: 0px;
     left: -4px;
-    clip: rect(95px, 9999px, 53px, 0);
+    clip: rect(195px, 9999px, 153px, 0);
   }
   100% {
     top: -1px;
