@@ -1,20 +1,18 @@
 <template>
   <div>
-    <div class="flex items-center justify-center py-5 text-6xl uppercase">
+    <div
+      class="flex items-center justify-center py-5 text-6xl uppercase select-none"
+    >
       <div class="font-semibold glitch" data-text="WM">WM</div>
       <div class="font-hairline glitch" data-text="#">#</div>
     </div>
     <div
       class="container absolute mx-auto text-center transform -translate-x-1/2 -translate-y-1/2"
-      style="top: 50%; left: 50%;"
+      style="top: 50%; left: 50%"
     >
-      <h1 class="text-6xl uppercase">
-        Waffle Machine
-      </h1>
+      <h1 class="text-6xl uppercase">Waffle Machine</h1>
 
-      <h2 class="text-3xl font-normal uppercase opacity-25">
-        Coming soon
-      </h2>
+      <h2 class="text-3xl font-normal uppercase opacity-25">Coming soon</h2>
     </div>
 
     <div class="absolute bottom-0 right-0 opacity-75">
