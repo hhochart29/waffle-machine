@@ -7,8 +7,8 @@ export function useMouseMove() {
   })
 
   function setMousePosition({ clientX, clientY }) {
-    mousePosState.x = clientX / window.innerWidth
-    mousePosState.y = 1 - clientY / window.innerHeight
+    mousePosState.x = clientX
+    mousePosState.y = clientY
   }
 
   onMounted(() => {
