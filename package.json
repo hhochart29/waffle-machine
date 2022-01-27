@@ -8,7 +8,7 @@
   "dependencies": {
     "@vue/composition-api": "^1.0.0-beta.14",
     "tailwindcss": "^1.8.10",
-    "three": "^0.120.1",
+    "three": "^0.137.0",
     "vue": "^3.0"
   },
   "devDependencies": {
